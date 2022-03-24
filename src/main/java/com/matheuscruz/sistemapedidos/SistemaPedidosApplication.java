@@ -83,9 +83,13 @@ public class SistemaPedidosApplication implements CommandLineRunner {
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
 		
+		if (categoriaRepository.findAll().size() == 0) {
+			categoriaRepository.saveAll(Arrays.asList(cat1, cat2));	
+		}
+		if (produtoRepository.findAll().size() == 0) {
+			produtoRepository.saveAll(Arrays.asList(p1, p2, p3));	
+		}
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
-		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 		
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
@@ -98,10 +102,12 @@ public class SistemaPedidosApplication implements CommandLineRunner {
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est2.getCidades().addAll(Arrays.asList(c2,c3));
 		
-		
-		estadoRepository.saveAll(Arrays.asList(est1, est2));
-		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));	
-		
+		if (estadoRepository.findAll().size() == 0) {
+			estadoRepository.saveAll(Arrays.asList(est1, est2));
+		}
+		if (cidadeRepository.findAll().size() == 0) {
+			cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));	
+		}
 		
 		Cliente cli1 = new Cliente(null, "Maria Silva", "Maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
 		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
@@ -111,8 +117,12 @@ public class SistemaPedidosApplication implements CommandLineRunner {
 		
 		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
 		
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		if (clienteRepository.findAll().size() == 0) {
+			clienteRepository.saveAll(Arrays.asList(cli1));
+		}
+		if (enderecoRepository.findAll().size() == 0) {
+			enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		}
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
@@ -127,8 +137,13 @@ public class SistemaPedidosApplication implements CommandLineRunner {
 		
 		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
 		
-		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
-		pagamentoRepository.saveAll(Arrays.asList(pgto1, pgto2));
+		if (pedidoRepository.findAll().size() == 0) {
+			pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
+		}
+		if (pagamentoRepository.findAll().size() == 0) {
+			pagamentoRepository.saveAll(Arrays.asList(pgto1, pgto2));
+		}
+		
 		
 		ItemPedido ip1 = new ItemPedido(ped1, p1, 00.00, 1, 2000.00);
 		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
@@ -141,9 +156,10 @@ public class SistemaPedidosApplication implements CommandLineRunner {
 		p2.getItens().addAll(Arrays.asList(ip3));
 		p2.getItens().addAll(Arrays.asList(ip2));
 		
+		if(itemPedidoRepository.findAll().size() == 0) {
+			itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));	
+		}
 		
-		
-		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
 
 }
