@@ -3,6 +3,7 @@ package com.matheuscruz.sistemapedidos.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.matheuscruz.sistemapedidos.domain.Categoria;
@@ -13,11 +14,11 @@ import com.matheuscruz.sistemapedidos.services.Exceptions.ObjectNotFoundExceptio
 public class CategoriaService {
 	
 	@Autowired
-	private CategoriaRepository repo;
+	private CategoriaRepository categoriaRepository;
 	
 	
 	public Categoria find(Integer id) {
-		Optional<Categoria> obj = repo.findById(id);
+		Optional<Categoria> obj = categoriaRepository.findById(id);
 		
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado ! ID: " + id + ", TIPO: " + Categoria.class.getName()));
@@ -25,12 +26,22 @@ public class CategoriaService {
 	
 	public Categoria insert(Categoria obj) {
 		obj.setId(null);
-		return repo.save(obj);
+		return categoriaRepository.save(obj);
 	}
 	
 	public Categoria update(Categoria obj) {
 		find(obj.getId());
-		return repo.save(obj);
+		return categoriaRepository.save(obj);
 	}
+	
+	public void delete(Integer id) {
+		find(id);
+		
+		try {
+			categoriaRepository.deleteById(id);
+		}catch (DataIntegrityViolationException e){
+			throw new DataIntegrityViolationException("Não é possível excluir uma categoria que possui produtos");
+		}
+		}
 
 }
