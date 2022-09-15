@@ -2,25 +2,49 @@ package com.matheuscruz.sistemapedidos.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
+import com.matheuscruz.sistemapedidos.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	
+	@NotEmpty(message="Preenchimento obrigatório!")
+	@Length(min=5, max=80, message="O tamanho deve ser entre 5 e 80 caracteres")
 	private String nome;
 	
+	@NotEmpty(message="Preenchimento obrigatório!")
+	@Email(message="Email inválido!")
 	private String email;
+	
+	
 	private String cpfOuCnpj;
+	
 	private Integer tipo;
 	
+	@NotEmpty(message="Preenchimento obrigatório!")
 	private String logradouro;
+	
+	@NotEmpty(message="Preenchimento obrigatório!")
 	private String numero;
+	
 	private String complemento;
+	
+	@NotEmpty(message="Preenchimento obrigatório!")
 	private String bairro;
+	
+	@NotEmpty(message="Preenchimento obrigatório!")
 	private String cep;
-
-	private String telegone1;
+	
+	@NotEmpty(message="Preenchimento obrigatório!")
+	private String telefone1;
+	
 	private String telefone2;
-	private String telegone3;
+	private String telefone3;
 	
 	private Integer cidadeId;
 	
@@ -92,12 +116,12 @@ public class ClienteNewDTO implements Serializable {
 		this.cep = cep;
 	}
 
-	public String getTelegone1() {
-		return telegone1;
+	public String getTelefone1() {
+		return telefone1;
 	}
 
-	public void setTelegone1(String telegone1) {
-		this.telegone1 = telegone1;
+	public void setTelefone1(String telefone1) {
+		this.telefone1 = telefone1;
 	}
 
 	public String getTelefone2() {
@@ -108,12 +132,12 @@ public class ClienteNewDTO implements Serializable {
 		this.telefone2 = telefone2;
 	}
 
-	public String getTelegone3() {
-		return telegone3;
+	public String getTelefone3() {
+		return telefone3;
 	}
 
-	public void setTelegone3(String telegone3) {
-		this.telegone3 = telegone3;
+	public void setTelefone3(String telefone3) {
+		this.telefone3 = telefone3;
 	}
 
 	public Integer getCidadeId() {
