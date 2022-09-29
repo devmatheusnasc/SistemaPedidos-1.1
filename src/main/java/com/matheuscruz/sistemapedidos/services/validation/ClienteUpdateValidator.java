@@ -35,7 +35,6 @@ public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate
 		@SuppressWarnings({ "unchecked" })
 		Map<String, String> map = (Map<String, String>)request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
 		
-		@SuppressWarnings("unused")
 		Integer uriId = Integer.parseInt(map.get("id"));
 		
 		
