@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.matheuscruz.sistemapedidos.domain.Cliente;
 import com.matheuscruz.sistemapedidos.domain.enums.TipoCliente;
 import com.matheuscruz.sistemapedidos.dto.ClienteNewDTO;
-import com.matheuscruz.sistemapedidos.repository.ClienteRepository;
+import com.matheuscruz.sistemapedidos.repositories.ClienteRepository;
 import com.matheuscruz.sistemapedidos.resources.exception.FieldMessage;
 import com.matheuscruz.sistemapedidos.services.validation.utils.BR;
 

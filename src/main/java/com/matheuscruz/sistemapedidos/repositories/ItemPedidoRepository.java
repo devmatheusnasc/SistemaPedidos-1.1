@@ -1,4 +1,4 @@
-package com.matheuscruz.sistemapedidos.repository;
+package com.matheuscruz.sistemapedidos.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

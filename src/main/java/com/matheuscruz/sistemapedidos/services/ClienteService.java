@@ -17,8 +17,8 @@ import com.matheuscruz.sistemapedidos.domain.Endereco;
 import com.matheuscruz.sistemapedidos.domain.enums.TipoCliente;
 import com.matheuscruz.sistemapedidos.dto.ClienteDTO;
 import com.matheuscruz.sistemapedidos.dto.ClienteNewDTO;
-import com.matheuscruz.sistemapedidos.repository.ClienteRepository;
-import com.matheuscruz.sistemapedidos.repository.EnderecoRepository;
+import com.matheuscruz.sistemapedidos.repositories.ClienteRepository;
+import com.matheuscruz.sistemapedidos.repositories.EnderecoRepository;
 import com.matheuscruz.sistemapedidos.services.Exceptions.ObjectNotFoundException;
 
 @Service

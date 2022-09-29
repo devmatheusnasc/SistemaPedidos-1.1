@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.matheuscruz.sistemapedidos.domain.Categoria;
 import com.matheuscruz.sistemapedidos.dto.CategoriaDTO;
-import com.matheuscruz.sistemapedidos.repository.CategoriaRepository;
+import com.matheuscruz.sistemapedidos.repositories.CategoriaRepository;
 import com.matheuscruz.sistemapedidos.services.Exceptions.ObjectNotFoundException;
 
 @Service

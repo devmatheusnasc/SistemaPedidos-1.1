@@ -13,7 +13,7 @@ import org.springframework.web.servlet.HandlerMapping;
 
 import com.matheuscruz.sistemapedidos.domain.Cliente;
 import com.matheuscruz.sistemapedidos.dto.ClienteDTO;
-import com.matheuscruz.sistemapedidos.repository.ClienteRepository;
+import com.matheuscruz.sistemapedidos.repositories.ClienteRepository;
 import com.matheuscruz.sistemapedidos.resources.exception.FieldMessage;
 
 public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate, ClienteDTO> {

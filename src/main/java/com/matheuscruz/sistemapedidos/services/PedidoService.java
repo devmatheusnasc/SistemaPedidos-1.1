@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.matheuscruz.sistemapedidos.domain.Pedido;
-import com.matheuscruz.sistemapedidos.repository.PedidoRepository;
+import com.matheuscruz.sistemapedidos.repositories.PedidoRepository;
 import com.matheuscruz.sistemapedidos.services.Exceptions.ObjectNotFoundException;
 
 @Service

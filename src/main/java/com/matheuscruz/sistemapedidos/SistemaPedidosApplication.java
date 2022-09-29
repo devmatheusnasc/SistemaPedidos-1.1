@@ -21,15 +21,15 @@ import com.matheuscruz.sistemapedidos.domain.Pedido;
 import com.matheuscruz.sistemapedidos.domain.Produto;
 import com.matheuscruz.sistemapedidos.domain.enums.EstadoPagamento;
 import com.matheuscruz.sistemapedidos.domain.enums.TipoCliente;
-import com.matheuscruz.sistemapedidos.repository.CategoriaRepository;
-import com.matheuscruz.sistemapedidos.repository.CidadeRepository;
-import com.matheuscruz.sistemapedidos.repository.ClienteRepository;
-import com.matheuscruz.sistemapedidos.repository.EnderecoRepository;
-import com.matheuscruz.sistemapedidos.repository.EstadoRepository;
-import com.matheuscruz.sistemapedidos.repository.ItemPedidoRepository;
-import com.matheuscruz.sistemapedidos.repository.PagamentoRepository;
-import com.matheuscruz.sistemapedidos.repository.PedidoRepository;
-import com.matheuscruz.sistemapedidos.repository.ProdutoRepository;
+import com.matheuscruz.sistemapedidos.repositories.CategoriaRepository;
+import com.matheuscruz.sistemapedidos.repositories.CidadeRepository;
+import com.matheuscruz.sistemapedidos.repositories.ClienteRepository;
+import com.matheuscruz.sistemapedidos.repositories.EnderecoRepository;
+import com.matheuscruz.sistemapedidos.repositories.EstadoRepository;
+import com.matheuscruz.sistemapedidos.repositories.ItemPedidoRepository;
+import com.matheuscruz.sistemapedidos.repositories.PagamentoRepository;
+import com.matheuscruz.sistemapedidos.repositories.PedidoRepository;
+import com.matheuscruz.sistemapedidos.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class SistemaPedidosApplication implements CommandLineRunner {
