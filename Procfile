@@ -1,0 +1,1 @@
+web : java -Dserver.port=$PORT -Dspring.profile.active=prod $JAVA_OPTS -jar target/sistema-pedidos-0.0.1-SNAPSHOT.jar
