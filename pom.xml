@@ -8,7 +8,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.matheuscruz</groupId>
-	<artifactId>sistema-pedidos</artifactId>
+	<artifactId>sistemapedidos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sistema-pedidos</name>
 	<description>Demo project for Spring Boot</description>
