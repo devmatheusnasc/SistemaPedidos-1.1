@@ -2,12 +2,14 @@ package com.matheuscruz.sistemapedidos.config;
 
 import java.text.ParseException;
 
-import com.matheuscruz.sistemapedidos.services.DBService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+
+import com.matheuscruz.sistemapedidos.services.DBService;
+import com.matheuscruz.sistemapedidos.services.EmailService;
+import com.matheuscruz.sistemapedidos.services.MockEmailService;
 
 @Configuration
 @Profile("test")
@@ -24,6 +26,11 @@ public class TestConfig {
 		
 		
 		return true;
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new MockEmailService();
 	}
 
 }
